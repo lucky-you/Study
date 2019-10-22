@@ -20,7 +20,6 @@
             android:background="@color/color_2bb5ff"
             android:orientation="horizontal">
 
-
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -51,33 +50,26 @@
         </LinearLayout>
 
 
-        <LinearLayout
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/slidingTabLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_ddd"
+            app:tl_indicator_color="@color/black"
+            app:tl_indicator_corner_radius="2dp"
+            app:tl_indicator_height="4dp"
+            app:tl_indicator_margin_bottom="4dp"
+            app:tl_indicator_width="10dp"
+            app:tl_textBold="BOTH"
+            app:tl_textSelectColor="@color/black"
+            app:tl_textUnselectColor="@color/color_666"
+            app:tl_textsize="16sp" />
 
-            <com.flyco.tablayout.SlidingTabLayout
-                android:id="@+id/slidingTabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_alignParentBottom="true"
-                android:background="@color/color_ddd"
-                app:tl_indicator_color="@color/black"
-                app:tl_indicator_corner_radius="2dp"
-                app:tl_indicator_height="4dp"
-                app:tl_indicator_margin_bottom="4dp"
-                app:tl_indicator_width="10dp"
-                app:tl_textBold="BOTH"
-                app:tl_textSelectColor="@color/black"
-                app:tl_textUnselectColor="@color/color_666"
-                app:tl_textsize="16sp" />
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/noScrollViewPager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </LinearLayout>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/noScrollViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 
     </ru.noties.scrollable.ScrollableLayout>
