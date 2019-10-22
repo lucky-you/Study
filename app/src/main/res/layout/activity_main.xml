@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/color_d8e7f9"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivHomeTheHorn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_home_the_horn" />
+
+        <com.zhowin.study.view.HorizontalMarqueeView
+            android:id="@+id/tvDynamicText"
+            android:layout_width="match_parent"
+            android:layout_height="44dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+    <Button
+        android:id="@+id/btnVideoPlay"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="视频播放" />
+
+    <Button
+        android:id="@+id/btnPlaying"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="CoordinatorLayout的使用" />
+    <Button
+        android:id="@+id/btnScrollableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="置顶的ScrollableLayout" />
+
+</LinearLayout>

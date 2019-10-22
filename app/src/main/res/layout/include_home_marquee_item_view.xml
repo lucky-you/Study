@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHomeMarqueeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvMarqueeText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="周小川:得到某样东西最好的方法就是让自己配得上它"
+        android:textColor="@color/color_2bb5ff"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

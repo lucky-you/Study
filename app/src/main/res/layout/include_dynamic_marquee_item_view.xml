@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llDynamicLayout"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/tvSendGiftName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="周小川"
+        android:textColor="@color/color_2bb5ff"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="送给"
+        android:textColor="@color/color_333"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvReceiveGiftName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="王梓涵"
+        android:textColor="@color/color_2bb5ff"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvGiftNameAndNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="99朵玫瑰花"
+        android:textColor="@color/color_333"
+        android:textSize="12sp" />
+
+</LinearLayout>
