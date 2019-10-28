@@ -53,21 +53,11 @@ public class GSYVideoPlayerActivity extends AppCompatActivity {
         //设置旋转
         orientationUtils = new OrientationUtils(this, gsyVideoPlayer);
         //设置全屏按键功能,这是使用的是选择屏幕，而不是全屏
-        gsyVideoPlayer.getFullscreenButton().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                orientationUtils.resolveByClick();
-            }
-        });
+        gsyVideoPlayer.getFullscreenButton().setOnClickListener(v -> orientationUtils.resolveByClick());
         //是否可以滑动调整
         gsyVideoPlayer.setIsTouchWiget(true);
         //设置返回按键功能
-        gsyVideoPlayer.getBackButton().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        gsyVideoPlayer.getBackButton().setOnClickListener(v -> onBackPressed());
 //        gsyVideoPlayer.startPlayLogic();
     }
 

@@ -52,6 +52,9 @@ public class CoordinatorLayoutActivity extends BaseActivity {
         noScrollViewPager.setAdapter(homePageAdapter);
         slidingTabLayout.setViewPager(noScrollViewPager);
         noScrollViewPager.setOffscreenPageLimit(mFragments.size());
+
+
+
     }
 
     @Override
