@@ -12,5 +12,10 @@
     <string name="message_install_failed">系统拒绝了程序的安装</string>
     <string name="message_overlay_failed">系统拒绝了其他程序的安装</string>
     <string name="message_error_storage">请检查外部存储设备</string>
-
+    <string name="orders_success">操作成功</string>
+    <string name="post_title_hint">标题(至少4个字)</string>
+    <string name="forum_post_review_hinttext">请勿发布违法的内容，会被删除或者禁言喔</string>
+    <string name="emotion_hint">适当使用表情，提升你的逼格</string>
+    <string name="pic_hint">请勿上传非法图片，违者一律封号！</string>
+    <string name="pic_add_hint">只能添加一张图片喔</string>
 </resources>

@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ScrollableLayoutActivity"></activity>
+        <activity android:name=".activity.EmojiLayoutActivity"></activity>
+        <activity android:name=".activity.ScrollableLayoutActivity" />
         <activity android:name=".activity.CoordinatorLayoutActivity" />
         <activity android:name=".activity.GSYVideoPlayerActivity" />
         <activity android:name=".activity.MainActivity">

@@ -3,7 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-
+    <color name="bg_grey">#F5F5F5</color>
 
     <color name="title_bar_color">#7966ff</color>
     <color name="background_color">#f1eefc</color>
@@ -31,6 +31,6 @@
     <color name="black60">#99000000</color>
     <color name="color_fefefe">#fefefe</color>
     <color name="color_2bb5ff">#2bb5ff</color>
-
-
+    <color name="transparent">#00000000</color>
+    <color name="font_grey">#848484</color>
 </resources>

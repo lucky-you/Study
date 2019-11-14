@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnVideoPlay).setOnClickListener(this::onClick);
         findViewById(R.id.btnPlaying).setOnClickListener(this::onClick);
         findViewById(R.id.btnScrollableLayout).setOnClickListener(this::onClick);
+        findViewById(R.id.btnEmojiLayout).setOnClickListener(this::onClick);
         initPermission();
         addViewToMarquee();
 
@@ -64,13 +65,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void addViewToMarquee() {
-
         marqueeViewOne = View.inflate(this, R.layout.include_dynamic_marquee_item_view, null);
         marqueeViewTwo = View.inflate(this, R.layout.include_home_marquee_item_view, null);
-
         marqueeViewOne.findViewById(R.id.tvSendGiftName).setOnClickListener(this);
         marqueeViewOne.findViewById(R.id.tvReceiveGiftName).setOnClickListener(this);
-
         tvDynamicText.addViewInQueue(marqueeViewOne);
         tvDynamicText.setOnSopScrollListener(this);
         tvDynamicText.startScroll();
@@ -94,6 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnScrollableLayout:
                 mContext.startActivity(new Intent(mContext, ScrollableLayoutActivity.class));
+
+                break;
+            case R.id.btnEmojiLayout:
+                mContext.startActivity(new Intent(mContext, EmojiLayoutActivity.class));
                 break;
 
         }
