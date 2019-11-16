@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnPlaying).setOnClickListener(this::onClick);
         findViewById(R.id.btnScrollableLayout).setOnClickListener(this::onClick);
         findViewById(R.id.btnEmojiLayout).setOnClickListener(this::onClick);
+        findViewById(R.id.btnAndroidLiveLayout).setOnClickListener(this::onClick);
         initPermission();
         addViewToMarquee();
 
@@ -59,7 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     }
                 }, Permission.READ_EXTERNAL_STORAGE,
-                Permission.WRITE_EXTERNAL_STORAGE);
+                Permission.WRITE_EXTERNAL_STORAGE,
+                Permission.CAMERA,
+                Permission.RECORD_AUDIO);
 
     }
 
@@ -96,6 +99,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnEmojiLayout:
                 mContext.startActivity(new Intent(mContext, EmojiLayoutActivity.class));
+                break;
+            case R.id.btnAndroidLiveLayout:
+                mContext.startActivity(new Intent(mContext, LiveVideoActivity.class));
                 break;
 
         }

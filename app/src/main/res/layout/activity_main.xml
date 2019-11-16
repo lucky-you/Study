@@ -18,7 +18,7 @@
             android:layout_height="20dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginRight="4dp"
             android:src="@drawable/ic_home_the_horn" />
 
         <com.zhowin.study.view.HorizontalMarqueeView
@@ -37,7 +37,7 @@
         android:id="@+id/btnVideoPlay"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:gravity="center"
         android:text="视频播放" />
 
@@ -45,22 +45,32 @@
         android:id="@+id/btnPlaying"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:gravity="center"
         android:text="CoordinatorLayout的使用" />
+
     <Button
         android:id="@+id/btnScrollableLayout"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:gravity="center"
         android:text="置顶的ScrollableLayout" />
+
     <Button
         android:id="@+id/btnEmojiLayout"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:gravity="center"
         android:text="Emoji的使用" />
+
+    <Button
+        android:id="@+id/btnAndroidLiveLayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:text="LiveVideo" />
 
 </LinearLayout>
