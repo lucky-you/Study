@@ -1,6 +1,7 @@
 package com.zhowin.study.emoticon;
 
 import android.content.Context;
+import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
@@ -30,7 +31,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/4/21.
  */
-public class EmotionView extends LinearLayout {
+public class EmotionView extends LinearLayout implements ViewPager.OnPageChangeListener {
 
     private LinearLayout llEmotion;
     private ViewPager vpEmotion;
@@ -40,14 +41,13 @@ public class EmotionView extends LinearLayout {
     private ImageView pic;
     private ImageView ivDelete;
     private TextView tvHint;
-
     private Context mContext;
     private EmotionPagerAdapter emotionPagerGvAdapter;
     private int lastPosition = 0;
     private EditText etContent;
     private ImageButton btnPhoto;
     private ImageButton btnCamera;
-
+    private OnItemClickListener listener;
 
     public EmotionView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -64,7 +64,7 @@ public class EmotionView extends LinearLayout {
         llShow = (RelativeLayout) findViewById(R.id.llShow);
         pic = (ImageView) findViewById(R.id.pic);
         ivDelete = (ImageView) findViewById(R.id.ivDelete);
-        tvHint = (TextView) findViewById(R.id.tvHint);
+        tvHint = (TextView) findViewById(R.id.tvHintMessage);
         btnPhoto = (ImageButton) findViewById(R.id.btnPhoto);
         btnCamera = (ImageButton) findViewById(R.id.btnCamera);
         btnPhoto.setOnClickListener(v -> listener.selectPic());
@@ -104,25 +104,7 @@ public class EmotionView extends LinearLayout {
         LayoutParams params = new LayoutParams(width, gvHeight);
         vpEmotion.setLayoutParams(params);
         vpEmotion.setAdapter(emotionPagerGvAdapter);
-        vpEmotion.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                // 改变指示点状态
-                llPoint.getChildAt(lastPosition).setEnabled(false);
-                llPoint.getChildAt(position).setEnabled(true);
-                lastPosition = position;
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
+        vpEmotion.addOnPageChangeListener(this);
         initPoint(gvs.size());
     }
 
@@ -166,23 +148,19 @@ public class EmotionView extends LinearLayout {
         gv.setVerticalSpacing(padding);
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(gvWidth, gvHeight);
         gv.setLayoutParams(params);
-        EmojiAdapter adapter = new EmojiAdapter(mContext, icons,itemWidth);
+        EmojiAdapter adapter = new EmojiAdapter(mContext, icons, itemWidth);
         gv.setAdapter(adapter);
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 EmojiAdapter emotionAdapter = (EmojiAdapter) parent.getAdapter();
                 if (position == emotionAdapter.getCount() - 1) {
-                    etContent.dispatchKeyEvent(
-                            new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
+                    etContent.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
                 } else {
                     Emojicon item = emotionAdapter.getItem(position);
                     int curPosition = etContent.getSelectionStart();
                     StringBuilder sb = new StringBuilder(etContent.getText().toString());
                     sb.insert(curPosition, item.getEmoji());
-                    //格式化表情
-//                    SpannableString weiboContent = StringUtils.getFormatContent(
-//                            mContext, etContent, sb.toString());
                     etContent.setText(sb.toString());
                     try {
                         etContent.setSelection(curPosition + item.getEmoji().length());
@@ -260,7 +238,24 @@ public class EmotionView extends LinearLayout {
         this.listener = listener;
     }
 
-    private OnItemClickListener listener;
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        // 改变指示点状态
+        llPoint.getChildAt(lastPosition).setEnabled(false);
+        llPoint.getChildAt(position).setEnabled(true);
+        lastPosition = position;
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
 
     public interface OnItemClickListener {
         void selectPic();
