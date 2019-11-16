@@ -1,0 +1,13 @@
+R_DEF: Internal format may change without notice
+local
+anim focus_animation
+attr? cpv_focusDrawable
+attr? cpv_indicatorDrawable
+attr? rpb_backgroundColor
+attr? rpb_cancelColor
+attr? rpb_runningColor
+attr? rpb_timeLength
+dimen camera_focus_area_size
+drawable video_focus_icon
+styleable CameraPreviewView cpv_focusDrawable cpv_indicatorDrawable
+styleable RecordProgressBar rpb_backgroundColor rpb_runningColor rpb_cancelColor rpb_timeLength
