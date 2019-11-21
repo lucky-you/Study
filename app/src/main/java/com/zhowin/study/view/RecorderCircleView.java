@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import com.zhowin.study.R;
 
 /**
- * Created by tsy on 2016/12/30.
+ * Created by tsy on 2018/12/30.
  */
 
 public class RecorderCircleView extends FrameLayout {
