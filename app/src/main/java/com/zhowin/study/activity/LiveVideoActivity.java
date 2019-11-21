@@ -44,7 +44,7 @@ public class LiveVideoActivity extends BaseActivity implements View.OnTouchListe
     private int RECORDER_WIDTH;     //视频录制宽度
     private int RECORDER_HEIGHT;    //视频录制高度
     private static final int MIN_RECORDER_TIME = 5000;       //最小录制时长 单位ms
-    private static final int MAX_RECORDER_TIME = 60000;      //最大录制时长 单位ms
+    private static final int MAX_RECORDER_TIME = 20000;      //最大录制时长 单位ms
     private static final int MSG_STOP = 1;      //录制结束
 
 
