@@ -97,14 +97,12 @@ public class RecorderVideoView extends View {
             } else {
                 canvas.drawCircle(radius, radius, mMaxCorner, mCenPaint);
             }
-
         } else {
             if (isRecord) {
                 mProPaint.setAlpha(128);
             } else {
                 mProPaint.setAlpha(200);
             }
-
             // 画圆环
             canvas.drawCircle(radius, radius, radius - mProPaint.getStrokeWidth() * 0.5f, mProPaint);
             // 画中心
@@ -119,13 +117,10 @@ public class RecorderVideoView extends View {
                 mMaxCorner, mMinCorner).setDuration(350);
         ObjectAnimator rectSizeAnimator = ObjectAnimator.ofFloat(this, "rectWidth",
                 mMaxRectWidth, mMinRectWidth).setDuration(350);
-
         ObjectAnimator strokeWidthAnimator = ObjectAnimator.ofFloat(this, "strokeWidth",
                 mMinStrokeWidth, mMaxStrokeWidth).setDuration(600);
-
         strokeWidthAnimator.setRepeatMode(ObjectAnimator.REVERSE);
         strokeWidthAnimator.setRepeatCount(ObjectAnimator.INFINITE);
-
         startAnimatorSet.playTogether(cornerAnimator, rectSizeAnimator, strokeWidthAnimator);
         startAnimatorSet.start();
     }
@@ -159,6 +154,5 @@ public class RecorderVideoView extends View {
         this.strokeWidth = strokeWidth;
         invalidate();
     }
-
 
 }

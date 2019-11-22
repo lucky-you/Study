@@ -46,5 +46,8 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.49'
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     implementation 'ru.noties:scrollable:1.3.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation project(':video')
+    implementation project(':camera')
+    implementation project(':OpenGLlibrary')
 }

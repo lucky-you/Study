@@ -55,10 +55,12 @@ public class CameraPreviewView extends FrameLayout {
             @Override
             public void onAnimationStart(Animation animation) {
             }
+
             @Override
             public void onAnimationEnd(Animation animation) {
                 mFocusAnimationView.setVisibility(INVISIBLE);
             }
+
             @Override
             public void onAnimationRepeat(Animation animation) {
             }
@@ -67,6 +69,7 @@ public class CameraPreviewView extends FrameLayout {
 
     /**
      * 初始化
+     *
      * @param camera
      * @param width
      * @param height
@@ -75,7 +78,7 @@ public class CameraPreviewView extends FrameLayout {
         mCamera = camera;
         mWidth = width;
         mHeight = height;
-        if(mCameraView != null) {
+        if (mCameraView != null) {
             removeView(mCameraView);
             mCameraView = null;
         }
@@ -92,7 +95,7 @@ public class CameraPreviewView extends FrameLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        if(mCamera == null) {
+        if (mCamera == null) {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
             return;
         }
@@ -105,7 +108,6 @@ public class CameraPreviewView extends FrameLayout {
     }
 
     public class CameraView extends SurfaceView implements SurfaceHolder.Callback {
-
         private String TAG = "CameraView";
         private float mOldDist = 1f;
 
@@ -119,7 +121,7 @@ public class CameraPreviewView extends FrameLayout {
             mCamera.stopPreview();
             Camera.Parameters parameters = mCamera.getParameters();
             Camera.Size previewSize = CameraHelper.getFullScreenPreviewSize(getContext(), mCamera);
-//            Log.d(TAG, "previewSize " + previewSize.width + "/" + previewSize.height);
+            Log.d(TAG, "previewSize:" + previewSize.width + "/" + previewSize.height);
             parameters.setPreviewSize(previewSize.width, previewSize.height);
             mCamera.setParameters(parameters);
             // 预览尺寸改变，请求重新布局、计算宽高
@@ -157,7 +159,7 @@ public class CameraPreviewView extends FrameLayout {
 
         @Override
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            if(mCamera == null) {
+            if (mCamera == null) {
                 super.onMeasure(widthMeasureSpec, heightMeasureSpec);
                 return;
             }
@@ -173,7 +175,7 @@ public class CameraPreviewView extends FrameLayout {
 
         @Override
         public boolean onTouchEvent(MotionEvent event) {
-            if(mCamera == null) {
+            if (mCamera == null) {
                 return false;
             }
             if (event.getPointerCount() == 1) {     //单点触控

@@ -33,4 +33,5 @@
     <color name="color_2bb5ff">#2bb5ff</color>
     <color name="transparent">#00000000</color>
     <color name="font_grey">#848484</color>
+    <color name="black_trans">#11000000</color>
 </resources>

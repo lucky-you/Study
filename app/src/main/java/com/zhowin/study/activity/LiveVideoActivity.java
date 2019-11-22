@@ -31,6 +31,9 @@ import org.bytedeco.javacv.FrameRecorder;
 
 import java.lang.ref.WeakReference;
 
+/**
+ * 视频录制:依赖 video model
+ */
 public class LiveVideoActivity extends BaseActivity implements View.OnTouchListener {
 
     private Camera mCamera;
@@ -159,7 +162,7 @@ public class LiveVideoActivity extends BaseActivity implements View.OnTouchListe
             mVideoHandler.sendEmptyMessageDelayed(MSG_STOP, MAX_RECORDER_TIME);        //MAX_RECORDER_TIME后自动停止
         } catch (FrameRecorder.Exception | FrameFilter.Exception e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "录制失败", Toast.LENGTH_SHORT).show();
+            ToastUtils.showLong("录制失败");
         }
     }
 

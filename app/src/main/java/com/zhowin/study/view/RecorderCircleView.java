@@ -15,9 +15,10 @@ import android.widget.ImageView;
 import com.zhowin.study.R;
 
 /**
- * Created by tsy on 2018/12/30.
+ * author Z_B
+ * date :2019/9/15 10:27
+ * description: 录制视频的圆形按钮
  */
-
 public class RecorderCircleView extends FrameLayout {
 
     private ImageView mOutBgCircle;
@@ -25,10 +26,8 @@ public class RecorderCircleView extends FrameLayout {
     private ImageView mPressedOutBgCircle;
     private ImageView mPressedInBgCircle;
     private ProgressCircleView mProgressCircleView;
-
     private int mTotalTime = 10000;     //总时间 默认10s
     private long mStartTime = 0L;   //开始时间
-
     private boolean mIsRecording = false;
 
     public void setTotalTime(int totalTime) {
@@ -82,14 +81,14 @@ public class RecorderCircleView extends FrameLayout {
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
 
-        TypedArray typeArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CircleProgressbar, 0 , 0);
+        TypedArray typeArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CircleProgressbar, 0, 0);
         int radius = (int) Math.ceil(typeArray.getDimension(R.styleable.CircleProgressbar_radius, 80));
         int strokeWidth = (int) Math.ceil(typeArray.getDimension(R.styleable.CircleProgressbar_strokeWidth, 10));
         mProgressCircleView = new ProgressCircleView(context, attrs);
         mProgressCircleView.setVisibility(GONE);
         addView(mProgressCircleView, new LayoutParams(
-                (radius+strokeWidth)*2,
-                (radius+strokeWidth)*2, Gravity.CENTER));
+                (radius + strokeWidth) * 2,
+                (radius + strokeWidth) * 2, Gravity.CENTER));
     }
 
     public ProgressCircleView getProgressCircleView() {
@@ -113,7 +112,7 @@ public class RecorderCircleView extends FrameLayout {
         }
 
         private void initAttrs(Context context, AttributeSet attrs) {
-            TypedArray typeArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CircleProgressbar, 0 , 0);
+            TypedArray typeArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CircleProgressbar, 0, 0);
             radius = typeArray.getDimension(R.styleable.CircleProgressbar_radius, 80);
             strokeWidth = typeArray.getDimension(R.styleable.CircleProgressbar_strokeWidth, 10);
             ringColor = typeArray.getColor(R.styleable.CircleProgressbar_ringColor, 0xFF0000);
@@ -131,8 +130,8 @@ public class RecorderCircleView extends FrameLayout {
 
         @Override
         protected void onDraw(Canvas canvas) {
-            if(mIsRecording) {
-                RectF oval = new RectF(strokeWidth/2, strokeWidth/2, getWidth() - strokeWidth/2, getHeight() - strokeWidth/2);
+            if (mIsRecording) {
+                RectF oval = new RectF(strokeWidth / 2, strokeWidth / 2, getWidth() - strokeWidth / 2, getHeight() - strokeWidth / 2);
                 canvas.drawArc(oval, 0, 0, false, ringPaint);
                 canvas.drawArc(oval, -90, ((float) (System.currentTimeMillis() - mStartTime) / mTotalTime) * 360, false, ringPaint);
                 invalidate();

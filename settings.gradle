@@ -1,2 +1,2 @@
-include ':app', ':video'
+include ':app', ':video', ':OpenGLlibrary', ':camera'
 rootProject.name='Study'

@@ -66,11 +66,26 @@
         android:text="Emoji的使用" />
 
     <Button
-        android:id="@+id/btnAndroidLiveLayout"
+        android:id="@+id/btnRecorderVideoLayout"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_margin="4dp"
         android:gravity="center"
-        android:text="LiveVideo" />
+        android:text="RecorderVideo" />
+
+    <Button
+        android:id="@+id/btnOpenGLVideoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:text="OpenGLVideo" />
+    <Button
+        android:id="@+id/btnEasyCameraVideoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:text="EasyCameraVideo" />
 
 </LinearLayout>

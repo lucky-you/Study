@@ -16,6 +16,7 @@ import com.yanzhenjie.permission.runtime.Permission;
 import com.zhowin.study.R;
 import com.zhowin.study.permission.AndPermissionListener;
 import com.zhowin.study.permission.AndPermissionUtils;
+import com.zhowin.study.utils.ToastUtils;
 import com.zhowin.study.view.HorizontalMarqueeView;
 
 import java.util.List;
@@ -36,7 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnPlaying).setOnClickListener(this::onClick);
         findViewById(R.id.btnScrollableLayout).setOnClickListener(this::onClick);
         findViewById(R.id.btnEmojiLayout).setOnClickListener(this::onClick);
-        findViewById(R.id.btnAndroidLiveLayout).setOnClickListener(this::onClick);
+        findViewById(R.id.btnRecorderVideoLayout).setOnClickListener(this::onClick);
+        findViewById(R.id.btnOpenGLVideoLayout).setOnClickListener(this::onClick);
+        findViewById(R.id.btnEasyCameraVideoLayout).setOnClickListener(this::onClick);
         initPermission();
         addViewToMarquee();
 
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AndPermissionUtils.requestPermission(mContext, new AndPermissionListener() {
                     @Override
                     public void PermissionSuccess(List<String> permissions) {
-                        Log.e("xy", "权限获取成功");
+//                        Log.e("xy", "权限获取成功");
                     }
 
                     @Override
@@ -82,10 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tvSendGiftName:
-                Log.e("xy", "点击了送礼物的人");
+                ToastUtils.showLong("点击了送礼物的人");
                 break;
             case R.id.tvReceiveGiftName:
-                Log.e("xy", "点击了收礼物的人");
+                ToastUtils.showLong("点击了收礼物的人");
                 break;
             case R.id.btnVideoPlay:
                 mContext.startActivity(new Intent(mContext, GSYVideoPlayerActivity.class));
@@ -100,8 +103,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnEmojiLayout:
                 mContext.startActivity(new Intent(mContext, EmojiLayoutActivity.class));
                 break;
-            case R.id.btnAndroidLiveLayout:
+            case R.id.btnRecorderVideoLayout:
                 mContext.startActivity(new Intent(mContext, LiveVideoActivity.class));
+                break;
+            case R.id.btnOpenGLVideoLayout:
+                mContext.startActivity(new Intent(mContext, CameraOpenGLVideoActivity.class));
+                break;
+            case R.id.btnEasyCameraVideoLayout:
+                mContext.startActivity(new Intent(mContext, EasyCameraVideoActivity.class));
                 break;
 
         }
@@ -112,7 +121,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onStopScroll() {
         tvDynamicText.removeViewInQueue(marqueeViewOne);
         tvDynamicText.stopScroll();
-//        tvDynamicText.addViewInQueue(marqueeViewTwo);
-//        tvDynamicText.startScroll();
     }
 }

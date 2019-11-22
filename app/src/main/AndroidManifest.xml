@@ -10,9 +10,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 如果是安卓8.0，应用编译配置的targetSdkVersion>=26，请务必添加以下权限 -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name=".base.BaseApplication"
@@ -22,7 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.LiveVideoActivity"></activity>
+        <activity android:name=".activity.EasyCameraVideoActivity"></activity>
+        <activity android:name=".activity.CameraOpenGLVideoActivity" />
+        <activity android:name=".activity.LiveVideoActivity" />
         <activity android:name=".activity.EmojiLayoutActivity" />
         <activity android:name=".activity.ScrollableLayoutActivity" />
         <activity android:name=".activity.CoordinatorLayoutActivity" />
