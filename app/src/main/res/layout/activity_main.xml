@@ -80,6 +80,7 @@
         android:layout_margin="4dp"
         android:gravity="center"
         android:text="OpenGLVideo" />
+
     <Button
         android:id="@+id/btnEasyCameraVideoLayout"
         android:layout_width="match_parent"
@@ -87,5 +88,13 @@
         android:layout_margin="4dp"
         android:gravity="center"
         android:text="EasyCameraVideo" />
+
+    <Button
+        android:id="@+id/btnVoicePlayer"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:text="VoicePlayer" />
 
 </LinearLayout>

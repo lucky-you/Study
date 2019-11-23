@@ -3,6 +3,7 @@ package com.zhowin.study.base;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
 
 
 /**
@@ -11,7 +12,7 @@ import android.content.Context;
 public class BaseApplication extends Application {
 
     protected static BaseApplication instance;
-
+    public static boolean IS_OPEN_RECEIPT = true;
 
     @Override
     public void onCreate() {
@@ -30,6 +31,15 @@ public class BaseApplication extends Application {
         return instance;
     }
 
+
+    /**
+     * 在程序内部关闭时，调用此方法
+     */
+    public void destory() {
+        // 释放数据库
+        // SQLiteHelper.release();
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
 
     /**
      * 获取当前进程的名称

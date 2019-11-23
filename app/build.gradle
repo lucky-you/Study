@@ -50,4 +50,5 @@ dependencies {
     implementation project(':video')
     implementation project(':camera')
     implementation project(':OpenGLlibrary')
+    implementation 'org.greenrobot:eventbus:3.1.1'
 }

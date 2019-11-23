@@ -18,4 +18,26 @@
     <string name="emotion_hint">适当使用表情，提升你的逼格</string>
     <string name="pic_hint">请勿上传非法图片，违者一律封号！</string>
     <string name="pic_add_hint">只能添加一张图片喔</string>
+    <string name="mute">静音</string>
+    <string name="hands_free">免提</string>
+    <string name="tip_wait_friend">正在等待对方接收邀请</string>
+
+
+    <string name="skin_light_green">浅浅绿</string>
+    <string name="skin_sea_blue">大海蓝</string>
+    <string name="skin_elegant_black">高雅黑</string>
+    <string name="skin_chinese_red">中国红</string>
+    <string name="skin_viridian_green">淡钴绿</string>
+    <string name="skin_perceptual_pink">感性粉</string>
+    <string name="skin_amber_yellow">琥珀黄</string>
+    <string name="skin_light_coffe">浅咖色</string>
+    <string name="skin_powder_azure">粉天蓝</string>
+    <string name="skin_leaf_green">粉叶绿</string>
+    <string name="skin_business_blue">商务蓝</string>
+    <string name="skin_blue_gray">蓝灰色</string>
+    <string name="skin_burnt_umber">深茶色</string>
+    <string name="skin_orange">橘黄色</string>
+    <string name="skin_new">新皮肤</string>
+
+
 </resources>

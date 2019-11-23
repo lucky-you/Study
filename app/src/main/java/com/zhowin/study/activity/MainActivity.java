@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnRecorderVideoLayout).setOnClickListener(this::onClick);
         findViewById(R.id.btnOpenGLVideoLayout).setOnClickListener(this::onClick);
         findViewById(R.id.btnEasyCameraVideoLayout).setOnClickListener(this::onClick);
+        findViewById(R.id.btnVoicePlayer).setOnClickListener(this::onClick);
         initPermission();
         addViewToMarquee();
 
@@ -98,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnScrollableLayout:
                 mContext.startActivity(new Intent(mContext, ScrollableLayoutActivity.class));
-
                 break;
             case R.id.btnEmojiLayout:
                 mContext.startActivity(new Intent(mContext, EmojiLayoutActivity.class));
@@ -111,6 +111,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnEasyCameraVideoLayout:
                 mContext.startActivity(new Intent(mContext, EasyCameraVideoActivity.class));
+                break;
+            case R.id.btnVoicePlayer:
+                mContext.startActivity(new Intent(mContext, VoiceAudioActivity.class));
                 break;
 
         }

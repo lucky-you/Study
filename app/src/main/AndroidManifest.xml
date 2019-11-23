@@ -21,7 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.EasyCameraVideoActivity"></activity>
+        <activity android:name=".voide.activity.VoiceAudioRingActivity"></activity>
+        <activity android:name=".activity.VoiceAudioActivity" />
+        <activity android:name=".activity.EasyCameraVideoActivity" />
         <activity android:name=".activity.CameraOpenGLVideoActivity" />
         <activity android:name=".activity.LiveVideoActivity" />
         <activity android:name=".activity.EmojiLayoutActivity" />
