@@ -15,11 +15,13 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.zhowin.study.R;
+import com.zhowin.study.utils.ScreenUtil;
 
 /**
  * author Z_B
  * date :2019/11/25 8:47
- * description:
+ * description:BottomSheet 的基类
  */
 public abstract class BaseBottomSheetFrag extends BottomSheetDialogFragment {
     protected Context mContext;
@@ -49,20 +51,25 @@ public abstract class BaseBottomSheetFrag extends BottomSheetDialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        //设置弹起时去掉背景的遮罩效果
+//        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.TransBottomSheetDialogStyle);
         //每次打开都调用该方法 类似于onCreateView 用于返回一个Dialog实例
-        dialog = (BottomSheetDialog) super.onCreateDialog(savedInstanceState);
+        dialog = super.onCreateDialog(savedInstanceState);
         if (rootView == null) {
             //缓存下来的View 当为空时才需要初始化 并缓存
             rootView = View.inflate(mContext, getLayoutResId(), null);
             initView();
         }
 
-//        int screenHeight = ScreenUtil.getScreenHeight(mContext);
-//        int height = (screenHeight * 3) >> 2;//屏幕高的75%
-//        ViewGroup.LayoutParams layoutParams =
-//                new ViewGroup.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, height);
-//        dialog.setContentView(rootView, layoutParams);//设置View 并带有布局参数的
-        setContentView(dialog);//设置View重新关联
+        //自适应高度
+//        setContentView(dialog);//设置View重新关联
+
+        //固定高度
+        int screenHeight = ScreenUtil.getScreenHeight(mContext);
+        int height = (screenHeight * 3) >> 2;//屏幕高的75%
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, height);
+        dialog.setContentView(rootView, layoutParams);//设置View 并带有布局参数的
+
         mBehavior = BottomSheetBehavior.from((View) rootView.getParent());
         mBehavior.setHideable(true);
         //让父View背景透明 是圆角边的关键
@@ -77,8 +84,6 @@ public abstract class BaseBottomSheetFrag extends BottomSheetDialogFragment {
                 mBehavior.setPeekHeight(rootView.getHeight());
             }
         });
-
-
         resetView();
         return dialog;
     }

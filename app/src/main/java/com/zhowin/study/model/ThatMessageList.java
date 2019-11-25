@@ -5,68 +5,43 @@ package com.zhowin.study.model;
  */
 public class ThatMessageList {
 
-    private int sendID;
+    private int id;
+    private String title;
+    private String content;
 
-    private String sendName;
-
-    private int receiveID;
-
-    private String receiveName;
-
-    private String giftName;
-
-    private String giftNumber;
-
-    public ThatMessageList() {
-
+    public int getId() {
+        return id;
     }
 
-
-    public int getSendID() {
-        return sendID;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setSendID(int sendID) {
-        this.sendID = sendID;
+    public ThatMessageList(int id, String title) {
+        this.id = id;
+        this.title = title;
     }
 
-    public String getSendName() {
-        return sendName;
+    public ThatMessageList(int id, String title, String content) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
     }
 
-    public void setSendName(String sendName) {
-        this.sendName = sendName;
+    public String getTitle() {
+        return title;
     }
 
-    public int getReceiveID() {
-        return receiveID;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setReceiveID(int receiveID) {
-        this.receiveID = receiveID;
+    public String getContent() {
+        return content;
     }
 
-    public String getReceiveName() {
-        return receiveName;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public void setReceiveName(String receiveName) {
-        this.receiveName = receiveName;
-    }
-
-    public String getGiftName() {
-        return giftName;
-    }
-
-    public void setGiftName(String giftName) {
-        this.giftName = giftName;
-    }
-
-    public String getGiftNumber() {
-        return giftNumber;
-    }
-
-    public void setGiftNumber(String giftNumber) {
-        this.giftNumber = giftNumber;
-    }
 }

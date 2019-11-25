@@ -16,7 +16,7 @@ import com.zhowin.study.R;
 
 /**
  * Created by：Z_B on 2018/5/11 14:50
- * Effect：
+ * Effect： 水平跑马灯效果
  */
 public class HorizontalMarqueeView extends HorizontalScrollView implements Runnable {
 

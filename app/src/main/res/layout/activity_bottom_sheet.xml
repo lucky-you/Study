@@ -8,16 +8,6 @@
 
 
     <Button
-        android:id="@+id/btnDialogStyle"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:text="DiaLog的使用"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
-    <Button
         android:id="@+id/btnListStyle"
         android:layout_width="match_parent"
         android:layout_height="44dp"
