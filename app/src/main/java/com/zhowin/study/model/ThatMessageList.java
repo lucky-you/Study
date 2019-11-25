@@ -1,9 +1,9 @@
 package com.zhowin.study.model;
 
 /**
- * 礼物的model
+ * item的model
  */
-public class ThatGiftList {
+public class ThatMessageList {
 
     private int sendID;
 
@@ -17,14 +17,10 @@ public class ThatGiftList {
 
     private String giftNumber;
 
-    public ThatGiftList(int sendID, String sendName, int receiveID, String receiveName, String giftName, String giftNumber) {
-        this.sendID = sendID;
-        this.sendName = sendName;
-        this.receiveID = receiveID;
-        this.receiveName = receiveName;
-        this.giftName = giftName;
-        this.giftNumber = giftNumber;
+    public ThatMessageList() {
+
     }
+
 
     public int getSendID() {
         return sendID;
