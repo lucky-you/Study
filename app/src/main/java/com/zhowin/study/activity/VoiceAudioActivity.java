@@ -22,12 +22,6 @@ import java.util.Timer;
  * 语音通话——》拨打界面
  */
 public class VoiceAudioActivity extends BaseLoginActivity {
-    Timer timer = new Timer();
-    private String mLoginUserId;
-    private boolean isAudio;
-    private String call_toUser;
-    private String call_toName;
-    private String meetUrl;
     private AssetFileDescriptor mAssetFileDescriptor;
     private MediaPlayer mediaPlayer;
     private RoundedImageView mCallAvatar;
@@ -38,10 +32,6 @@ public class VoiceAudioActivity extends BaseLoginActivity {
 
     @Override
     public void initData(@Nullable Bundle bundle) {
-        isAudio = bundle.getBoolean("isvoice", false);
-        call_toUser = bundle.getString("touserid");
-        call_toName = bundle.getString("username");
-        meetUrl = bundle.getString("meetUrl");
     }
 
     @Override
