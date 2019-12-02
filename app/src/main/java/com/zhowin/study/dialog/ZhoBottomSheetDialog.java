@@ -3,11 +3,10 @@ package com.zhowin.study.dialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.zhowin.study.R;
 import com.zhowin.study.adapter.ItemOneListAdapter;
 import com.zhowin.study.model.ThatMessageList;
-import com.zhowin.study.view.BaseBottomSheetFrag;
+import com.zhowin.study.base.BaseBottomSheetFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.List;
  * date :2019/11/25 8:52
  * description: 底部弹出的BottomSheetDialog
  */
-public class ZhoBottomSheetDialog extends BaseBottomSheetFrag {
+public class ZhoBottomSheetDialog extends BaseBottomSheetFragment {
 
     private RecyclerView recyclerView;
 

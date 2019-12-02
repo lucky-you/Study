@@ -1,4 +1,4 @@
-package com.zhowin.sdk.video;
+package com.zhowin.video;
 
 import android.content.Context;
 import android.util.AttributeSet;

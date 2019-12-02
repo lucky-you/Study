@@ -17,7 +17,7 @@ import java.util.Locale;
 public class VideoFileUtil {
 
 
-    private static final String ROOT_DIR = "AhoWinVideo";
+    private static final String ROOT_DIR = "a.zhoWinVideo";
     private static String sRootPath = "";
     private static boolean hasInitialize = false;
 
@@ -58,6 +58,6 @@ public class VideoFileUtil {
     }
 
     public static String getVideoName() {
-        return "VID_" + new SimpleDateFormat("yyyyMMdd_HH:mm:ss").format(new Date()) + ".mp4";
+        return "VID_" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".mp4";
     }
 }

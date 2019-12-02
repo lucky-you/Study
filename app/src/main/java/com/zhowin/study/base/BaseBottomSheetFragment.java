@@ -1,4 +1,4 @@
-package com.zhowin.study.view;
+package com.zhowin.study.base;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -23,7 +23,7 @@ import com.zhowin.study.utils.ScreenUtil;
  * date :2019/11/25 8:47
  * description:BottomSheet 的基类
  */
-public abstract class BaseBottomSheetFrag extends BottomSheetDialogFragment {
+public abstract class BaseBottomSheetFragment extends BottomSheetDialogFragment {
     protected Context mContext;
     protected View rootView;
     protected BottomSheetBehavior mBehavior;

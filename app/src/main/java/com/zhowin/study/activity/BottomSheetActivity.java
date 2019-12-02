@@ -5,14 +5,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.zhowin.study.R;
 import com.zhowin.study.adapter.ItemOneListAdapter;
 import com.zhowin.study.base.BaseActivity;
+import com.zhowin.study.base.BaseStyleDialog;
+import com.zhowin.study.dialog.BottomDialogBox;
 import com.zhowin.study.dialog.ZhoBottomSheetDialog;
 import com.zhowin.study.model.ThatMessageList;
+import com.zhowin.study.utils.DisplayUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +38,7 @@ public class BottomSheetActivity extends BaseActivity {
 
     @Override
     public void bindViews(View contentView) {
+        get(R.id.btnDialogStyle).setOnClickListener(this::setClickListener);
         get(R.id.btnListStyle).setOnClickListener(this::setClickListener);
         get(R.id.btnFragmentStyle).setOnClickListener(this::setClickListener);
     }
@@ -44,6 +51,10 @@ public class BottomSheetActivity extends BaseActivity {
     @Override
     public void setClickListener(View view) {
         switch (view.getId()) {
+            case R.id.btnDialogStyle:
+                BottomDialogBox bottomDialogBox = new BottomDialogBox(mContext);
+                bottomDialogBox.show();
+                break;
             case R.id.btnListStyle:
                 showDialog();
                 break;
@@ -63,9 +74,8 @@ public class BottomSheetActivity extends BaseActivity {
         ItemOneListAdapter itemOneListAdapter = new ItemOneListAdapter(messageLists);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         recyclerView.setAdapter(itemOneListAdapter);
-        final BottomSheetDialog dialog = new BottomSheetDialog(this, R.style.TransBottomSheetDialogStyle);
+        final BottomSheetDialog dialog = new BottomSheetDialog(mContext, R.style.TransBottomSheetDialogStyle);
         dialog.setContentView(recyclerView);
         dialog.show();
-
     }
 }

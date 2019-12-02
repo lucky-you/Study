@@ -1,4 +1,4 @@
-package com.zhowin.sdk.video;
+package com.zhowin.video;
 
 import android.app.Activity;
 import android.content.Context;

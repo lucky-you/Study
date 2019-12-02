@@ -9,17 +9,17 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.zhowin.sdk.video.CameraHelper;
-import com.zhowin.sdk.video.CameraOrientationDetector;
-import com.zhowin.sdk.video.CameraPreviewView;
-import com.zhowin.sdk.video.Recorder;
+import com.zhowin.video.CameraHelper;
+import com.zhowin.video.CameraOrientationDetector;
+import com.zhowin.video.CameraPreviewView;
+import com.zhowin.video.Recorder;
 import com.zhowin.study.R;
 import com.zhowin.study.base.BaseActivity;
 import com.zhowin.study.utils.ToastUtils;
@@ -182,8 +182,9 @@ public class LiveVideoActivity extends BaseActivity implements View.OnTouchListe
                 ToastUtils.showLong("录制时间不能少于" + MIN_RECORDER_TIME / 1000 + "s");
             } else {
                 ToastUtils.showLong("录制完成:" + mRecorder.getOutputPath());
-//                startActivity(RecoderPlayerActivity.createIntent(this, mRecorder.getOutputPath()));
-//                finish();
+                Log.e("xy", "url = " + mRecorder.getOutputPath());
+                PreviewVideoActivity.start(mContext, mRecorder.getOutputPath());
+                finish();
             }
         } catch (FrameRecorder.Exception | FrameFilter.Exception e) {
             e.printStackTrace();

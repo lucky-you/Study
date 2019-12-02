@@ -34,11 +34,11 @@ public class RecorderUtils {
             return null; // 内存卡不存在
         }
         File sdDir = Environment.getExternalStorageDirectory();
-        File eis = new File(sdDir.toString() + "/a.RecordVideo/");
+        File eis = new File(sdDir.toString() + "/a.zhoWinVideo/");
         if (!eis.exists()) {
             eis.mkdir();
         }
-        return sdDir.toString() + "/a.RecordVideo/";
+        return sdDir.toString() + "/a.zhoWinVideo/";
     }
 
 

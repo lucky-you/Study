@@ -116,7 +116,7 @@ public class CameraOpenGLVideoActivity extends BaseActivity {
     private boolean startRecord(String path) {
         try {
             mRecordView.startRecord(path);
-            Log.e("xy", "开始录制：" + path);
+//            Log.e("xy", "开始录制：" + path);
             mCurrPath = path;
         } catch (IOException e) {
             e.printStackTrace();
@@ -134,7 +134,9 @@ public class CameraOpenGLVideoActivity extends BaseActivity {
             mRecordView.stopRecord();
             mRecording = false;
             Log.e("xy", "停止录制：" + mCurrPath);
-            compteRecord(mCurrPath);
+            PreviewVideoActivity.start(mContext,mCurrPath);
+            finish();
+//            compteRecord(mCurrPath);
         } catch (InterruptedException e) {
             e.printStackTrace();
             return false;
@@ -150,7 +152,8 @@ public class CameraOpenGLVideoActivity extends BaseActivity {
         final String out = RecorderUtils.getVideoFileByTime();
         String[] cmd = RecorderUtils.ffmengComprerssCmd(path, out);
         long duration = RecorderUtils.getDuration(path);
-        Log.e("xy", "路径：" + out + "<--时长:" + duration);
+        Log.e("xy", "路径：" + path + "<--时长:" + duration);
+
     }
 
     @Override

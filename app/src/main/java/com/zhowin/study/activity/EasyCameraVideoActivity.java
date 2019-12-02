@@ -64,7 +64,7 @@ public class EasyCameraVideoActivity extends BaseActivity {
         // 设置只能录像或只能拍照或两种都可以（默认两种都可以）
         jCameraView.setFeatures(JCameraView.BUTTON_STATE_BOTH);
         // 设置视频保存路径
-        jCameraView.setSaveVideoPath(Environment.getExternalStorageDirectory().getPath() + File.separator + "a.JCamera");
+        jCameraView.setSaveVideoPath(Environment.getExternalStorageDirectory().getPath() + File.separator + "a.zhoWinVideo");
         // 设置视频质量
         jCameraView.setMediaQuality(JCameraView.MEDIA_QUALITY_MIDDLE);
         // JCameraView监听
@@ -93,7 +93,9 @@ public class EasyCameraVideoActivity extends BaseActivity {
             @Override
             public void recordSuccess(String url, Bitmap firstFrame) {
                 // 获取视频路径
-                Log.i("xy", "url = " + url);
+                Log.e("xy", "url = " + url);
+                PreviewVideoActivity.start(mContext, url);
+                finish();
             }
         });
         // 左边按钮点击事件

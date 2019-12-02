@@ -7,7 +7,7 @@ public interface ConstantValues {
     String TOKEN = "token";
     String URL = "url";
     String TITLE = "title";
-
+    String VIDEO_PATH = "video_path";
 
     String[] imageList = {
             "http://img.mukewang.com/55237dcc0001128c06000338.jpg",
