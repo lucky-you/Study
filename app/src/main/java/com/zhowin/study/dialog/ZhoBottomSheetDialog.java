@@ -1,8 +1,13 @@
 package com.zhowin.study.dialog;
 
+import android.app.Dialog;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.zhowin.study.R;
 import com.zhowin.study.adapter.ItemOneListAdapter;
 import com.zhowin.study.model.ThatMessageList;
@@ -27,11 +32,16 @@ public class ZhoBottomSheetDialog extends BaseBottomSheetFragment {
     }
 
     @Override
+    public boolean isFixedHeight() {
+        return true;
+    }
+
+
+    @Override
     public void initView() {
         recyclerView = rootView.findViewById(R.id.recyclerView);
         showDialog();
     }
-
 
     private void showDialog() {
         List<ThatMessageList> messageLists = new ArrayList<>();

@@ -51,8 +51,10 @@ public abstract class BaseBottomSheetFragment extends BottomSheetDialogFragment 
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        //设置弹起时去掉背景的遮罩效果
-//        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.TransBottomSheetDialogStyle);
+        if (isRemoveMask()) {
+            //设置弹起时去掉背景的遮罩效果
+            setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.TransBottomSheetDialogStyle);
+        }
         //每次打开都调用该方法 类似于onCreateView 用于返回一个Dialog实例
         dialog = super.onCreateDialog(savedInstanceState);
         if (rootView == null) {
@@ -60,16 +62,16 @@ public abstract class BaseBottomSheetFragment extends BottomSheetDialogFragment 
             rootView = View.inflate(mContext, getLayoutResId(), null);
             initView();
         }
-
-        //自适应高度
-//        setContentView(dialog);//设置View重新关联
-
-        //固定高度
-        int screenHeight = ScreenUtil.getScreenHeight(mContext);
-        int height = (screenHeight * 3) >> 2;//屏幕高的75%
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, height);
-        dialog.setContentView(rootView, layoutParams);//设置View 并带有布局参数的
-
+        if (isFixedHeight()) {
+            //固定高度
+            int screenHeight = ScreenUtil.getScreenHeight(mContext);
+            int height = (screenHeight * 3) >> 2;//屏幕高的75%
+            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, height);
+            dialog.setContentView(rootView, layoutParams);//设置View 并带有布局参数的
+        } else {
+            //自适应高度,设置View重新关联
+            setContentView(dialog);
+        }
         mBehavior = BottomSheetBehavior.from((View) rootView.getParent());
         mBehavior.setHideable(true);
         //让父View背景透明 是圆角边的关键
@@ -88,23 +90,39 @@ public abstract class BaseBottomSheetFragment extends BottomSheetDialogFragment 
         return dialog;
     }
 
+
     /**
      * 设置显示的View到Dialog中
      * 抽象方法 子类可重写
      * 默认添加的View 高度为Wrap 某些场景需要固定高度
-     *
-     * @param dialog
      */
     protected void setContentView(Dialog dialog) {
         dialog.setContentView(rootView);
     }
 
+    /**
+     * 获取资源id
+     */
     public abstract int getLayoutResId();
 
     /**
      * 初始化View和设置数据等操作的方法
      */
     public abstract void initView();
+
+    /**
+     * 高度是否固定,默认不固定
+     */
+    public boolean isFixedHeight() {
+        return false;
+    }
+
+    /**
+     * 是否去掉遮罩,默认不去掉
+     */
+    public boolean isRemoveMask() {
+        return false;
+    }
 
     /**
      * 重置的View和数据的空方法 子类可以选择实现
@@ -116,6 +134,9 @@ public abstract class BaseBottomSheetFragment extends BottomSheetDialogFragment 
 
     }
 
+    /**
+     * 是否开启
+     */
     public boolean isShowing() {
         return dialog != null && dialog.isShowing();
     }
@@ -139,7 +160,7 @@ public abstract class BaseBottomSheetFragment extends BottomSheetDialogFragment 
         if (!this.isAdded()) {
             super.show(manager, tag);
         } else {
-            Log.d("", this + " has add to FragmentManager");
+            Log.d("xy", this + " has add to FragmentManager");
         }
     }
 }

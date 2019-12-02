@@ -21,7 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.PreviewVideoActivity"></activity>
+        <activity android:name=".activity.SnapHelperRecyclerViewActivity"></activity>
+        <activity android:name=".activity.PreviewVideoActivity" />
         <activity android:name=".activity.BottomSheetActivity" />
         <activity android:name=".voide.activity.VoiceAudioRingActivity" />
         <activity android:name=".activity.VoiceAudioActivity" />

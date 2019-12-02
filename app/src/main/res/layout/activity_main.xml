@@ -84,6 +84,13 @@
             android:layout_margin="4dp"
             android:gravity="center"
             android:text="BottomSheet" />
+        <Button
+            android:id="@+id/btnSnapHelper"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:text="SnapHelper的使用" />
 
 
     </LinearLayout>

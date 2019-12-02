@@ -11,7 +11,7 @@
         android:layout_gravity="center"
         android:background="@drawable/shape_white_dialog_6dp_bg"
         android:gravity="center"
-        android:text="@string/app_name"
+        android:text="确定要如此操作吗?"
         android:textColor="@color/color_333"
         android:textSize="15sp" />
 
@@ -31,7 +31,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="确定"
-            android:textColor="@color/title_bar_color"
+            android:textColor="@color/font_red"
             android:textSize="14sp" />
 
         <View
@@ -47,7 +47,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="取消"
-            android:textColor="@color/color_333"
+            android:textColor="@color/title_bar_color"
             android:textSize="14sp" />
 
 

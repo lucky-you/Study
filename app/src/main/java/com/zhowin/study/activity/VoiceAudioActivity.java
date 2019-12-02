@@ -6,12 +6,12 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.zhowin.study.R;
-import com.zhowin.study.voide.activity.BaseLoginActivity;
+import com.zhowin.study.base.BaseActivity;
 
 /**
  * 语音通话——》拨打界面
  */
-public class VoiceAudioActivity extends BaseLoginActivity {
+public class VoiceAudioActivity extends BaseActivity {
 
 
     @Override
