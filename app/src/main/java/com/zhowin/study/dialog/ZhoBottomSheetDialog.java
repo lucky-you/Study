@@ -1,17 +1,12 @@
 package com.zhowin.study.dialog;
 
-import android.app.Dialog;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.zhowin.study.R;
 import com.zhowin.study.adapter.ItemOneListAdapter;
-import com.zhowin.study.model.ThatMessageList;
 import com.zhowin.study.base.BaseBottomSheetFragment;
+import com.zhowin.study.model.ThatMessageList;
 
 import java.util.ArrayList;
 import java.util.List;

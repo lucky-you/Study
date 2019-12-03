@@ -1,24 +1,19 @@
 package com.zhowin.study.activity;
 
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.zhowin.study.R;
 import com.zhowin.study.adapter.ItemOneListAdapter;
 import com.zhowin.study.base.BaseActivity;
-import com.zhowin.study.base.BaseStyleDialog;
 import com.zhowin.study.dialog.BottomDialogBox;
 import com.zhowin.study.dialog.ZhoBottomSheetDialog;
 import com.zhowin.study.model.ThatMessageList;
-import com.zhowin.study.utils.DisplayUtils;
 
 import java.util.ArrayList;
 import java.util.List;

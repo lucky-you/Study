@@ -1,8 +1,5 @@
 package com.zhowin.study.activity;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,6 +8,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.zho.recorder.View.CameraRecordView;
 import com.zhowin.study.R;
@@ -134,7 +133,7 @@ public class CameraOpenGLVideoActivity extends BaseActivity {
             mRecordView.stopRecord();
             mRecording = false;
             Log.e("xy", "停止录制：" + mCurrPath);
-            PreviewVideoActivity.start(mContext,mCurrPath);
+            PreviewVideoActivity.start(mContext, mCurrPath);
             finish();
 //            compteRecord(mCurrPath);
         } catch (InterruptedException e) {

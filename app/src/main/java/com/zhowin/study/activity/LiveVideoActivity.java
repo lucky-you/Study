@@ -16,15 +16,15 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
-import com.zhowin.video.CameraHelper;
-import com.zhowin.video.CameraOrientationDetector;
-import com.zhowin.video.CameraPreviewView;
-import com.zhowin.video.Recorder;
 import com.zhowin.study.R;
 import com.zhowin.study.base.BaseActivity;
 import com.zhowin.study.utils.ToastUtils;
 import com.zhowin.study.utils.VideoFileUtil;
 import com.zhowin.study.view.RecorderCircleView;
+import com.zhowin.video.CameraHelper;
+import com.zhowin.video.CameraOrientationDetector;
+import com.zhowin.video.CameraPreviewView;
+import com.zhowin.video.Recorder;
 
 import org.bytedeco.javacv.FrameFilter;
 import org.bytedeco.javacv.FrameRecorder;

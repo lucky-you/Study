@@ -1,21 +1,18 @@
 package com.zhowin.study.activity;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import com.zho.camera.JCameraView;
 import com.zho.camera.listener.ClickListener;
 import com.zho.camera.listener.ErrorListener;
 import com.zho.camera.listener.JCameraListener;
-import com.zho.camera.util.FileUtil;
 import com.zhowin.study.R;
 import com.zhowin.study.base.BaseActivity;
 import com.zhowin.study.utils.BitmapUtil;
