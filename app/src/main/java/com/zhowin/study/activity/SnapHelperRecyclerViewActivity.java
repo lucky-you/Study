@@ -65,6 +65,7 @@ public class SnapHelperRecyclerViewActivity extends BaseActivity {
         GalleryLayoutManager layoutManager = new GalleryLayoutManager(GalleryLayoutManager.HORIZONTAL);
         layoutManager.attach(ViewPageRecyclerView, 3);
         layoutManager.setItemTransformer(new ScaleTransformer());
+//        ViewPageRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.HORIZONTAL, false));
         ViewPageRecyclerView.setAdapter(thatSnapHelperItemAdapter);
     }
 

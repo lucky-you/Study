@@ -62,14 +62,12 @@ public class CameraHelper {
             result = (info.orientation - degrees + 360) % 360;
         }
         camera.setDisplayOrientation(result);
-
         return result;
     }
 
     //获取指定位置的摄像头id
     private static int getCameraId(int cameraFacing) {
         int numberOfCameras = Camera.getNumberOfCameras();
-
         Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
         for (int i = 0; i < numberOfCameras; i++) {
             Camera.getCameraInfo(i, cameraInfo);
