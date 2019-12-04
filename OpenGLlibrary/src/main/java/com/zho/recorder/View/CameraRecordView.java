@@ -210,7 +210,7 @@ public class CameraRecordView extends TextureView implements SurfaceTextureListe
      */
     private void requestCameraFocus() {
         if (mCamera != null && mCurrentCameraId == Camera.CameraInfo.CAMERA_FACING_BACK) {
-            mCameraAutoFocusCallbackHandler.sendEmptyMessageDelayed(1, 1000);
+            mCameraAutoFocusCallbackHandler.sendEmptyMessageDelayed(1, 500);
         }
     }
 

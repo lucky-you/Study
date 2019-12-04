@@ -36,9 +36,5 @@ public class VoiceAudioActivity extends BaseActivity {
     public void setClickListener(View view) {
     }
 
-    @Override
-    public void onBackPressed() {
-    }
-
 
 }
