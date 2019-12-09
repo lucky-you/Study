@@ -25,6 +25,7 @@ public class VoiceAudioActivity extends BaseActivity {
 
     @Override
     public void bindViews(View contentView) {
+
     }
 
     @Override
