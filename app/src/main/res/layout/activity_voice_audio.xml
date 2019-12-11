@@ -10,13 +10,9 @@
         android:layout_height="200dp"
         android:layout_margin="10dp" />
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_margin="8dp"
-        android:scaleType="centerCrop"
-        android:src="@color/title_bar_color"
-        app:riv_corner_radius_bottom_left="4dp"
-        app:riv_corner_radius_top_left="4dp" />
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
