@@ -2,9 +2,7 @@ package com.zhowin.study.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CalendarView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.zhowin.study.R;
@@ -15,7 +13,6 @@ import com.zhowin.study.base.BaseActivity;
  */
 public class VoiceAudioActivity extends BaseActivity {
 
-    private CalendarView calendarView;
 
     @Override
     public void initData(@Nullable Bundle bundle) {
@@ -28,8 +25,6 @@ public class VoiceAudioActivity extends BaseActivity {
 
     @Override
     public void bindViews(View contentView) {
-        calendarView = get(R.id.calendarView);
-        calendarView.setDate(System.currentTimeMillis());
 
     }
 
