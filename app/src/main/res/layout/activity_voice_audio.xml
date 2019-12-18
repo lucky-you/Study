@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.zhowin.study.view.CanvasText
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_margin="10dp" />
 
+    <com.zhowin.study.view.DashLineView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="10dp" />
 
 
 </LinearLayout>
