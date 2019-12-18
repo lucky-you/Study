@@ -19,9 +19,11 @@ import java.util.List;
 public class SkinUtils {
 
 
-    // 添加皮肤在这里加一行就可以，
-    // 然后字符串要国际化，改皮肤页面显示用，
-    // 保存primaryColor作本地持久化，所以primaryColor必须唯一，
+    /**
+     * 添加皮肤在这里加一行就可以，
+     * 然后字符串要国际化，改皮肤页面显示用，
+     * 保存primaryColor作本地持久化，所以primaryColor必须唯一，
+     */
     public static List<Skin> initDefaultSkins = Arrays.asList(
             // 小蚁logo色#14a399，淡钴绿  Viridian green
             new Skin(R.string.skin_viridian_green, R.color.color_14A399),
@@ -52,8 +54,18 @@ public class SkinUtils {
     private static final Skin DEFAULT_SKIN = initDefaultSkins.get(0);
     // key
     public static final String KEY_SKIN_COLOR = "KEY_SKIN_COLOR";
+
     @Nullable
     private static Skin currentSkin = null;
+
+    public static Skin getSkin(Context ctx) {
+        return requireSkin(ctx);
+    }
+
+    public static void setSkin(Context ctx, Skin skin) {
+        currentSkin = skin;
+        PreferenceUtils.putInt(ctx, KEY_SKIN_COLOR, skin.getPrimaryColor());
+    }
 
     @NonNull
     private static Skin requireSkin(Context ctx) {
@@ -76,15 +88,6 @@ public class SkinUtils {
             }
         }
         return currentSkin;
-    }
-
-    public static Skin getSkin(Context ctx) {
-        return requireSkin(ctx);
-    }
-
-    public static void setSkin(Context ctx, Skin skin) {
-        currentSkin = skin;
-        PreferenceUtils.putInt(ctx, KEY_SKIN_COLOR, skin.getPrimaryColor());
     }
 
 }
