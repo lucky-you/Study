@@ -22,7 +22,7 @@
     <string name="hands_free">免提</string>
     <string name="tip_wait_friend">正在等待对方接收邀请</string>
 
-
+    <!--    换肤的颜色-->
     <string name="skin_light_green">浅浅绿</string>
     <string name="skin_sea_blue">大海蓝</string>
     <string name="skin_elegant_black">高雅黑</string>
@@ -38,6 +38,5 @@
     <string name="skin_burnt_umber">深茶色</string>
     <string name="skin_orange">橘黄色</string>
     <string name="skin_new">新皮肤</string>
-
 
 </resources>

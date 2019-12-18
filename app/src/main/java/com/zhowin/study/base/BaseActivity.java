@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -13,6 +15,10 @@ import androidx.annotation.LayoutRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.zhowin.study.R;
+import com.zhowin.study.activity.MainActivity;
+import com.zhowin.study.skin.Skin;
+import com.zhowin.study.skin.SkinUtils;
+import com.zhowin.study.utils.BarUtils;
 import com.zhowin.study.utils.ToastUtils;
 
 

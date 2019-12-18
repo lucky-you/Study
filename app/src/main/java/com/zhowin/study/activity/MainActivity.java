@@ -1,69 +1,101 @@
 package com.zhowin.study.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
 
 import com.yanzhenjie.permission.runtime.Permission;
 import com.zhowin.study.R;
+import com.zhowin.study.base.BaseActivity;
 import com.zhowin.study.permission.AndPermissionListener;
 import com.zhowin.study.permission.AndPermissionUtils;
+import com.zhowin.study.skin.SkinUtils;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity {
 
-    private Context mContext;
+    private Button btnVideoPlay, btnPlaying, btnScrollableLayout, btnEmojiLayout, btnRecorderVideoLayout,
+            btnOpenGLVideoLayout, btnEasyCameraVideoLayout, btnVoicePlayer, btnBottomSheet, btnSnapHelper, btnSkinStore;
+
+    public static boolean isInitView = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mContext = this;
-        findViewById(R.id.btnVideoPlay).setOnClickListener(this::onClick);
-        findViewById(R.id.btnPlaying).setOnClickListener(this::onClick);
-        findViewById(R.id.btnScrollableLayout).setOnClickListener(this::onClick);
-        findViewById(R.id.btnEmojiLayout).setOnClickListener(this::onClick);
-        findViewById(R.id.btnRecorderVideoLayout).setOnClickListener(this::onClick);
-        findViewById(R.id.btnOpenGLVideoLayout).setOnClickListener(this::onClick);
-        findViewById(R.id.btnEasyCameraVideoLayout).setOnClickListener(this::onClick);
-        findViewById(R.id.btnVoicePlayer).setOnClickListener(this::onClick);
-        findViewById(R.id.btnBottomSheet).setOnClickListener(this::onClick);
-        findViewById(R.id.btnSnapHelper).setOnClickListener(this::onClick);
+    public void initData(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public int loadViewLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void bindViews(View contentView) {
+        btnVideoPlay = findViewById(R.id.btnVideoPlay);
+        btnVideoPlay.setOnClickListener(this::onClick);
+        btnPlaying = findViewById(R.id.btnPlaying);
+        btnPlaying.setOnClickListener(this::onClick);
+        btnScrollableLayout = findViewById(R.id.btnScrollableLayout);
+        btnScrollableLayout.setOnClickListener(this::onClick);
+        btnEmojiLayout = findViewById(R.id.btnEmojiLayout);
+        btnEmojiLayout.setOnClickListener(this::onClick);
+        btnRecorderVideoLayout = findViewById(R.id.btnRecorderVideoLayout);
+        btnRecorderVideoLayout.setOnClickListener(this::onClick);
+        btnOpenGLVideoLayout = findViewById(R.id.btnOpenGLVideoLayout);
+        btnOpenGLVideoLayout.setOnClickListener(this::onClick);
+        btnEasyCameraVideoLayout = findViewById(R.id.btnEasyCameraVideoLayout);
+        btnEasyCameraVideoLayout.setOnClickListener(this::onClick);
+        btnVoicePlayer = findViewById(R.id.btnVoicePlayer);
+        btnVoicePlayer.setOnClickListener(this::onClick);
+        btnBottomSheet = findViewById(R.id.btnBottomSheet);
+        btnBottomSheet.setOnClickListener(this::onClick);
+        btnSnapHelper = findViewById(R.id.btnSnapHelper);
+        btnSnapHelper.setOnClickListener(this::onClick);
+        btnSkinStore = findViewById(R.id.btnSkinStore);
+        btnSkinStore.setOnClickListener(this::onClick);
         initPermission();
-
+        initViews();
     }
 
-
-    private void initPermission() {
-        AndPermissionUtils.requestPermission(mContext, new AndPermissionListener() {
-                    @Override
-                    public void PermissionSuccess(List<String> permissions) {
-//                        Log.e("xy", "权限获取成功");
-                    }
-
-                    @Override
-                    public void PermissionFailure(List<String> permissions) {
-
-                    }
-
-                    @Override
-                    public void OpenSystemSettings() {
-
-                    }
-                }, Permission.READ_EXTERNAL_STORAGE,
-                Permission.WRITE_EXTERNAL_STORAGE,
-                Permission.CAMERA,
-                Permission.RECORD_AUDIO);
+    private void initViews() {
+        int defaultColorResId = SkinUtils.getSkin(this).getAccentColor();
+        int defaultColorNameResId = SkinUtils.getSkin(this).getColorName();
+        Log.e("xy", "color:" + defaultColorResId + "--colorName:" + mContext.getString(defaultColorNameResId));
+        btnVideoPlay.setBackgroundResource(defaultColorResId);
+        btnPlaying.setBackgroundResource(defaultColorResId);
+        btnScrollableLayout.setBackgroundResource(defaultColorResId);
+        btnEmojiLayout.setBackgroundResource(defaultColorResId);
+        btnRecorderVideoLayout.setBackgroundResource(defaultColorResId);
+        btnOpenGLVideoLayout.setBackgroundResource(defaultColorResId);
+        btnEasyCameraVideoLayout.setBackgroundResource(defaultColorResId);
+        btnVoicePlayer.setBackgroundResource(defaultColorResId);
+        btnBottomSheet.setBackgroundResource(defaultColorResId);
+        btnSnapHelper.setBackgroundResource(defaultColorResId);
+        btnSkinStore.setBackgroundResource(defaultColorResId);
 
     }
-
 
     @Override
-    public void onClick(View view) {
+    public void processLogic(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (isInitView) {
+            initViews();
+        }
+        MainActivity.isInitView = false;
+    }
+
+    @Override
+    public void setClickListener(View view) {
         switch (view.getId()) {
             case R.id.btnVideoPlay:
                 mContext.startActivity(new Intent(mContext, GSYVideoPlayerActivity.class));
@@ -95,9 +127,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnSnapHelper:
                 mContext.startActivity(new Intent(mContext, SnapHelperRecyclerViewActivity.class));
                 break;
+            case R.id.btnSkinStore:
+                mContext.startActivity(new Intent(mContext, SkinStoreActivity.class));
+                break;
 
         }
     }
 
+    private void initPermission() {
+        AndPermissionUtils.requestPermission(mContext, new AndPermissionListener() {
+                    @Override
+                    public void PermissionSuccess(List<String> permissions) {
+//                        Log.e("xy", "权限获取成功");
+                    }
 
+                    @Override
+                    public void PermissionFailure(List<String> permissions) {
+
+                    }
+
+                    @Override
+                    public void OpenSystemSettings() {
+
+                    }
+                }, Permission.READ_EXTERNAL_STORAGE,
+                Permission.WRITE_EXTERNAL_STORAGE,
+                Permission.CAMERA,
+                Permission.RECORD_AUDIO);
+
+    }
 }

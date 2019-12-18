@@ -27,6 +27,14 @@ public class GlideUtils {
                 .apply(options)
                 .into(imageView);
     }
+    public static void loadImageResID(Context context, int  resID, ImageView imageView) {
+        RequestOptions options = new RequestOptions()
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE);
+        Glide.with(context).load(resID)
+                .error(R.drawable.ic_default_image_view)
+                .apply(options)
+                .into(imageView);
+    }
 
 
     /**

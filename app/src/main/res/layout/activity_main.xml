@@ -19,7 +19,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="视频播放" />
+            android:text="视频播放"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnPlaying"
@@ -27,7 +28,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="CoordinatorLayout的使用" />
+            android:text="CoordinatorLayout的使用"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnScrollableLayout"
@@ -35,7 +37,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="置顶的ScrollableLayout" />
+            android:text="置顶的ScrollableLayout"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnEmojiLayout"
@@ -43,7 +46,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="Emoji的使用" />
+            android:text="Emoji的使用"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnRecorderVideoLayout"
@@ -51,7 +55,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="RecorderVideo" />
+            android:text="RecorderVideo"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnOpenGLVideoLayout"
@@ -59,7 +64,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="OpenGLVideo" />
+            android:text="OpenGLVideo"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnEasyCameraVideoLayout"
@@ -67,7 +73,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="EasyCameraVideo" />
+            android:text="EasyCameraVideo"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnVoicePlayer"
@@ -75,7 +82,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="Canvas的使用" />
+            android:text="Canvas的使用"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnBottomSheet"
@@ -83,7 +91,8 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="BottomSheet" />
+            android:text="BottomSheet"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnSnapHelper"
@@ -91,7 +100,17 @@
             android:layout_height="44dp"
             android:layout_margin="4dp"
             android:gravity="center"
-            android:text="SnapHelper的使用" />
+            android:text="SnapHelper的使用"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnSkinStore"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:text="Skin的使用"
+            android:textColor="@color/white" />
 
 
     </LinearLayout>

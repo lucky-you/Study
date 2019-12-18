@@ -1,29 +1,43 @@
 package com.zhowin.study.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.annotation.Nullable;
+
 import com.zhowin.study.R;
+import com.zhowin.study.base.BaseActivity;
 import com.zhowin.study.emoticon.EmotionView;
 import com.zhowin.study.utils.InputMethodUtils;
 
-public class EmojiLayoutActivity extends AppCompatActivity implements View.OnClickListener {
+public class EmojiLayoutActivity extends BaseActivity {
 
 
     private EditText editMessage;
     private EmotionView EmojiLayout;
     private ImageView ivImage, ivCamera, ivEmotion;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emoji_layout);
+    public void initData(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public int loadViewLayout() {
+        return R.layout.activity_emoji_layout;
+    }
+
+    @Override
+    public void bindViews(View contentView) {
+
+    }
+
+    @Override
+    public void processLogic(Bundle savedInstanceState) {
         editMessage = findViewById(R.id.editMessage);
         ivImage = findViewById(R.id.ivImage);
         ivCamera = findViewById(R.id.ivCamera);
@@ -42,7 +56,7 @@ public class EmojiLayoutActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    public void onClick(View view) {
+    public void setClickListener(View view) {
         switch (view.getId()) {
             case R.id.btnSend:
                 break;
@@ -60,8 +74,6 @@ public class EmojiLayoutActivity extends AppCompatActivity implements View.OnCli
                 }
                 break;
         }
-
-
 
     }
 }
