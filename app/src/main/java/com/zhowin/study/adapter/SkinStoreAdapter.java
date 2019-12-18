@@ -1,6 +1,5 @@
 package com.zhowin.study.adapter;
 
-import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,7 +13,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.zhowin.study.R;
 import com.zhowin.study.skin.Skin;
-import com.zhowin.study.utils.GlideUtils;
 
 import java.util.List;
 

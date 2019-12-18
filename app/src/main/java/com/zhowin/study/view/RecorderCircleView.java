@@ -116,6 +116,7 @@ public class RecorderCircleView extends FrameLayout {
             radius = typeArray.getDimension(R.styleable.CircleProgressbar_radius, 80);
             strokeWidth = typeArray.getDimension(R.styleable.CircleProgressbar_strokeWidth, 10);
             ringColor = typeArray.getColor(R.styleable.CircleProgressbar_ringColor, 0xFF0000);
+            typeArray.recycle();
         }
 
         private void initVariable() {
