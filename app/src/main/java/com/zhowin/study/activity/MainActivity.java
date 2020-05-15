@@ -58,6 +58,8 @@ public class MainActivity extends BaseActivity {
         btnSnapHelper.setOnClickListener(this::onClick);
         btnSkinStore = findViewById(R.id.btnSkinStore);
         btnSkinStore.setOnClickListener(this::onClick);
+        findViewById(R.id.btnViewPager).setOnClickListener(this::onClick);
+        findViewById(R.id.btnGalleryLayout).setOnClickListener(this::onClick);
         initPermission();
         initViews();
     }
@@ -66,17 +68,17 @@ public class MainActivity extends BaseActivity {
         int defaultColorResId = SkinUtils.getSkin(this).getAccentColor();
         int defaultColorNameResId = SkinUtils.getSkin(this).getColorName();
         Log.e("xy", "color:" + defaultColorResId + "--colorName:" + mContext.getString(defaultColorNameResId));
-        btnVideoPlay.setBackgroundResource(defaultColorResId);
-        btnPlaying.setBackgroundResource(defaultColorResId);
-        btnScrollableLayout.setBackgroundResource(defaultColorResId);
-        btnEmojiLayout.setBackgroundResource(defaultColorResId);
-        btnRecorderVideoLayout.setBackgroundResource(defaultColorResId);
-        btnOpenGLVideoLayout.setBackgroundResource(defaultColorResId);
-        btnEasyCameraVideoLayout.setBackgroundResource(defaultColorResId);
-        btnVoicePlayer.setBackgroundResource(defaultColorResId);
-        btnBottomSheet.setBackgroundResource(defaultColorResId);
-        btnSnapHelper.setBackgroundResource(defaultColorResId);
-        btnSkinStore.setBackgroundResource(defaultColorResId);
+        btnVideoPlay.setBackgroundColor(defaultColorResId);
+        btnPlaying.setBackgroundColor(defaultColorResId);
+        btnScrollableLayout.setBackgroundColor(defaultColorResId);
+        btnEmojiLayout.setBackgroundColor(defaultColorResId);
+        btnRecorderVideoLayout.setBackgroundColor(defaultColorResId);
+        btnOpenGLVideoLayout.setBackgroundColor(defaultColorResId);
+        btnEasyCameraVideoLayout.setBackgroundColor(defaultColorResId);
+        btnVoicePlayer.setBackgroundColor(defaultColorResId);
+        btnBottomSheet.setBackgroundColor(defaultColorResId);
+        btnSnapHelper.setBackgroundColor(defaultColorResId);
+        btnSkinStore.setBackgroundColor(defaultColorResId);
 
     }
 
@@ -130,6 +132,12 @@ public class MainActivity extends BaseActivity {
             case R.id.btnSkinStore:
                 mContext.startActivity(new Intent(mContext, SkinStoreActivity.class));
                 break;
+            case R.id.btnViewPager:
+                mContext.startActivity(new Intent(mContext, ViewPagerActivity.class));
+                break;
+            case R.id.btnGalleryLayout:
+                mContext.startActivity(new Intent(mContext, GalleryLayoutActivity.class));
+                break;
 
         }
     }
@@ -138,7 +146,6 @@ public class MainActivity extends BaseActivity {
         AndPermissionUtils.requestPermission(mContext, new AndPermissionListener() {
                     @Override
                     public void PermissionSuccess(List<String> permissions) {
-//                        Log.e("xy", "权限获取成功");
                     }
 
                     @Override

@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.zhowin.study.R;
 import com.zhowin.study.adapter.ThatSnapHelperItemAdapter;
 import com.zhowin.study.base.BaseActivity;
-import com.zhowin.study.manager.GalleryLayoutManager;
-import com.zhowin.study.manager.ScaleTransformer;
 import com.zhowin.study.model.ThatMessageList;
 
 import java.util.ArrayList;
@@ -26,7 +24,7 @@ import java.util.List;
  */
 public class SnapHelperRecyclerViewActivity extends BaseActivity {
 
-    private RecyclerView SnapHelperRecyclerView, ViewPageRecyclerView;
+    private RecyclerView SnapHelperRecyclerView;
     private ThatSnapHelperItemAdapter thatSnapHelperItemAdapter;
     private List<ThatMessageList> thatMessageList = new ArrayList<>();
 
@@ -43,7 +41,6 @@ public class SnapHelperRecyclerViewActivity extends BaseActivity {
     @Override
     public void bindViews(View contentView) {
         SnapHelperRecyclerView = get(R.id.SnapHelperRecyclerView);
-        ViewPageRecyclerView = get(R.id.ViewPageRecyclerView);
         for (int i = 0; i < 25; i++) {
             thatMessageList.add(new ThatMessageList(1, "测试的第" + i + "条"));
         }
@@ -55,18 +52,14 @@ public class SnapHelperRecyclerViewActivity extends BaseActivity {
     public void processLogic(Bundle savedInstanceState) {
         PagerSnapHelper pagerSnapHelper = new PagerSnapHelper();
         pagerSnapHelper.attachToRecyclerView(SnapHelperRecyclerView);
-//        LinearSnapHelper linearSnapHelper = new LinearSnapHelper();
-//        linearSnapHelper.attachToRecyclerView(recyclerView);
 
-        SnapHelperRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.HORIZONTAL, false));
+//        LinearSnapHelper linearSnapHelper = new LinearSnapHelper();
+//        linearSnapHelper.attachToRecyclerView(SnapHelperRecyclerView);
+
+        SnapHelperRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.VERTICAL, false));
         SnapHelperRecyclerView.setAdapter(thatSnapHelperItemAdapter);
 
 
-        GalleryLayoutManager layoutManager = new GalleryLayoutManager(GalleryLayoutManager.HORIZONTAL);
-        layoutManager.attach(ViewPageRecyclerView, 3);
-        layoutManager.setItemTransformer(new ScaleTransformer());
-//        ViewPageRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.HORIZONTAL, false));
-        ViewPageRecyclerView.setAdapter(thatSnapHelperItemAdapter);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package com.zhowin.study.activity;
 
-import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;

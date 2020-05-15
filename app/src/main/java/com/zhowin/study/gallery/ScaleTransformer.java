@@ -1,14 +1,15 @@
-package com.zhowin.study.manager;
+package com.zhowin.study.gallery;
 
 import android.view.View;
 
 
 /**
- * author Z_B
- * date :2019/12/2 20:02
- * description:
+ * Created by chensuilun on 2016/12/16.
  */
-public class ScaleTransformer implements GalleryLayoutManager.ItemTransformer  {
+public class ScaleTransformer implements GalleryLayoutManager.ItemTransformer {
+
+
+
     @Override
     public void transformItem(GalleryLayoutManager layoutManager, View item, float fraction) {
         item.setPivotX(item.getWidth() / 2.f);

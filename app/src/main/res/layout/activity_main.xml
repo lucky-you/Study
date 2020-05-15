@@ -112,6 +112,23 @@
             android:text="Skin的使用"
             android:textColor="@color/white" />
 
+        <Button
+            android:id="@+id/btnViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:text="ViewPager实现垂直翻页"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/btnGalleryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:text="GalleryLayout的使用"
+            android:textColor="@color/white" />
+
 
     </LinearLayout>
 

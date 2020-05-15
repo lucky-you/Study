@@ -1,4 +1,4 @@
-package com.zhowin.study.manager;
+package com.zhowin.study.gallery;
 
 import android.content.Context;
 import android.graphics.PointF;
@@ -15,11 +15,9 @@ import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhowin.study.BuildConfig;
-
 import static androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE;
 
 /**
- * A custom LayoutManager to build a {@link android.widget.Gallery} or a {@link android.support.v4.view.ViewPager}like {@link RecyclerView} and
  * support both {@link GalleryLayoutManager#HORIZONTAL} and {@link GalleryLayoutManager#VERTICAL} scroll.
  * Created by chensuilun on 2016/11/18.
  */
@@ -415,6 +413,7 @@ public class GalleryLayoutManager extends RecyclerView.LayoutManager implements 
     private float calculateToCenterFraction(View child, float pendingOffset) {
         int distance = calculateDistanceCenter(child, pendingOffset);
         int childLength = mOrientation == GalleryLayoutManager.HORIZONTAL ? child.getWidth() : child.getHeight();
+
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "calculateToCenterFraction: distance:" + distance + ",childLength:" + childLength);
         }
