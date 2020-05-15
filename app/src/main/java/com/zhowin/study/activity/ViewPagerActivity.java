@@ -49,7 +49,6 @@ public class ViewPagerActivity extends BaseActivity {
     @Override
     public void processLogic(Bundle savedInstanceState) {
         setViewPagerData();
-
 //        setRecyclerViewData();
 
     }
@@ -89,7 +88,7 @@ public class ViewPagerActivity extends BaseActivity {
 //        LinearSnapHelper linearSnapHelper = new LinearSnapHelper();
 //        linearSnapHelper.attachToRecyclerView(SnapHelperRecyclerView);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.HORIZONTAL, false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayout.VERTICAL, false));
 
         CustomSnapHelper mMySnapHelper = new CustomSnapHelper();
         mMySnapHelper.attachToRecyclerView(recyclerView);

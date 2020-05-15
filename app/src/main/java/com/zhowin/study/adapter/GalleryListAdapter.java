@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhowin.study.R;
-import com.zhowin.study.gallery.AdapterMeasureHelper;
 import com.zhowin.study.model.ThatMessageList;
 
 import java.util.List;
@@ -25,7 +24,6 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
     private Context mContext;
     private List<ThatMessageList> mItems;
     private OnItemClickListener mOnItemClickListener;
-    private AdapterMeasureHelper mCardAdapterHelper = new AdapterMeasureHelper();
 
     public GalleryListAdapter(List<ThatMessageList> items) {
         this.mItems = items;
@@ -45,14 +43,12 @@ public class GalleryListAdapter extends RecyclerView.Adapter<GalleryListAdapter.
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.include_gallery_list_item_view, parent, false);
-        mCardAdapterHelper.onCreateViewHolder(parent, itemView);
         itemView.setOnClickListener(this);
         return new ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        mCardAdapterHelper.onBindViewHolder(holder.itemView, position, getItemCount());
         String item = mItems.get(position).getTitle();
         holder.text.setText(item);
         holder.itemView.setTag(position);

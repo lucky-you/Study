@@ -16,13 +16,4 @@
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/GalleryLayoutView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <com.zhowin.study.gallery.SpeedRecyclerView
-        android:id="@+id/speedRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </LinearLayout>
