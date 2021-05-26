@@ -67,7 +67,6 @@ public class MainActivity extends BaseActivity {
     private void initViews() {
         int defaultColorResId = SkinUtils.getSkin(this).getAccentColor();
         int defaultColorNameResId = SkinUtils.getSkin(this).getColorName();
-        Log.e("xy", "color:" + defaultColorResId + "--colorName:" + mContext.getString(defaultColorNameResId));
         btnVideoPlay.setBackgroundColor(defaultColorResId);
         btnPlaying.setBackgroundColor(defaultColorResId);
         btnScrollableLayout.setBackgroundColor(defaultColorResId);

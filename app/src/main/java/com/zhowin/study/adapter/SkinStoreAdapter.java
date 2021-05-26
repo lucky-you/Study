@@ -1,5 +1,6 @@
 package com.zhowin.study.adapter;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -41,7 +42,7 @@ public class SkinStoreAdapter extends BaseQuickAdapter<Skin, BaseViewHolder> {
         TextView tvSkinName = helper.getView(R.id.tvSkinName);
         Skin skin = mData.get(helper.getAdapterPosition());
         tvSkinName.setText(skin.getColorName());
-        rivSkinColor.setImageResource(skin.getAccentColor());
+        rivSkinColor.setImageResource(R.color.colorPrimary);
         ivSkinCheck.setVisibility(currentSkin == skin ? View.VISIBLE : View.GONE);
     }
 }

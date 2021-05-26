@@ -49,11 +49,9 @@ public class SkinStoreActivity extends BaseActivity implements BaseQuickAdapter.
         // 初始化皮肤
         skinList = SkinUtils.initDefaultSkins;
         skinStoreAdapter = new SkinStoreAdapter(skinList);
-        skinStoreAdapter.setCurrentSkin(currentSkin);
         skinRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 3));
         skinRecyclerView.setAdapter(skinStoreAdapter);
         skinStoreAdapter.setOnItemClickListener(this::onItemClick);
-        skinStoreAdapter.setCurrentSkin(currentSkin);
     }
 
     @Override

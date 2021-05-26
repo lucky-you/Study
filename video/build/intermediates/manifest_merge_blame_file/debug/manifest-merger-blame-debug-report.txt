@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="19"
-6-->/Volumes/MData/zygl/AndroidProjuct/Study/video/src/main/AndroidManifest.xml
+6-->E:\AndroidSourceCode\Study\video\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="29" />
-7-->/Volumes/MData/zygl/AndroidProjuct/Study/video/src/main/AndroidManifest.xml
+7-->E:\AndroidSourceCode\Study\video\src\main\AndroidManifest.xml
 8
 9</manifest>

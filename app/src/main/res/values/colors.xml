@@ -36,8 +36,8 @@
     <color name="black_trans">#11000000</color>
 
     <!--    换肤的color-->
-    <color name="color_14A399">#14A399</color>
-    <color name="color_BAE019">#BAE019</color>
+    <color name="color_14A399">#FF14A399</color>
+    <color name="color_BAE019">#FFBAE019</color>
     <color name="color_7ED1FB">#7ED1FB</color>
     <color name="color_3C589B">#3C589B</color>
     <color name="color_099FDE">#099FDE</color>
